@@ -116,6 +116,19 @@ begin
         values(section_name, section_description);
 end; $$;
 
+/** UPDATE SECTION PROCEDURE **/
+create or replace procedure
+    update_section(section_id int, section_name varchar(100), section_description varchar(250))
+language plpgsql
+as $$
+begin
+    update Section
+        set
+            name = section_name,
+            description = section_description
+        where id = section_id;
+end; $$;
+
 /** ADD SUB SECTION PROCEDURE **/
 create or replace procedure
     add_sub_section(sub_section_name varchar(100), sub_section_description varchar(250), parent_section_id int)
@@ -126,6 +139,20 @@ begin
         values(sub_section_name, sub_section_description, parent_section_id);
 end; $$;
 
+/** UPDATE SUB SECTION PROCEDURE **/
+create or replace procedure
+    update_sub_section(sub_section_id int, sub_section_name varchar(100), sub_section_description varchar(250), parent_section_id int)
+language plpgsql
+as $$
+begin
+    update SubSection
+        set
+            name = sub_section_name,
+            description = sub_section_description,
+            section_id = parent_section_id
+        where id = sub_section_id;
+end; $$;
+
 /** ADD TAG PROCEDURE **/
 create or replace procedure
     add_tag(name varchar(100))
@@ -134,6 +161,18 @@ as $$
 begin
     insert into TagName(tag_name)
         values(name);
+end; $$;
+
+/** UPDATE TAG PROCEDURE **/
+create or replace procedure
+    update_tag(tag_id int, name varchar(100))
+language plpgsql
+as $$
+begin
+    update TagName
+        set
+            tag_name = name
+        where id = tag_id;
 end; $$;
 
 --
