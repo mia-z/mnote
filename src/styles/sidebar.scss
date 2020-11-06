@@ -93,44 +93,40 @@
                 height: 100%;
 
                 .nav-item {
+                    cursor: pointer;
                     height: 35px;
                     display: flex;
                     flex-direction: row;
                     justify-content: center;
                     user-select: none;
+                    margin: 5px 1px;
+                    transform: none;
 
                     &:hover {
-                        .filter-yellow {
-                            transition: filter ease-in-out 0.1s;
-                            filter: invert(75%) sepia(63%) saturate(842%) hue-rotate(3deg) brightness(97%) contrast(96%);
+                        .text {
+                            transform: translate(-5px, -5px);
+                            text-shadow: 5px 5px #0f0f0f;
                         }
 
-                        .filter-red {
-                            transition: filter ease-in-out 0.1s;
-                            filter: invert(25%) sepia(84%) saturate(4074%) hue-rotate(359deg) brightness(90%) contrast(150%);
-                        }
-
-                        .filter-green {
-                            transition: filter ease-in-out 0.1s;
-                            filter: invert(65%) sepia(77%) saturate(4687%) hue-rotate(85deg) brightness(124%) contrast(118%);
-                        }
-
-                        .filter-blue {
-                            transition: filter ease-in-out 0.1s;
-                            filter: invert(9%) sepia(99%) saturate(6766%) hue-rotate(247deg) brightness(91%) contrast(145%);
+                        .icon {
+                            transform: translate(-5px, -5px);
+                            text-shadow: 5px 5px #0f0f0f;
                         }
                     }
 
-                    div.icon img {
-                        //filter: invert(100%);
-                        color: red;
+                    .icon {
+                        margin: 5px;
+                        color: white;
+                        font-size: 1.6rem;
                         height: 35px;
+                        transition: all ease-in-out 0.2s;
                     }
 
                     .text {
                         color: white;
                         margin: auto 0;
                         font-family: $oswald;
+                        transition: all ease-in-out 0.2s;
                     }
                 }
             }

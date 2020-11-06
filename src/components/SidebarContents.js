@@ -18,7 +18,7 @@ const SidebarBody = ({navItems}) => {
         <div className={"body"}>
             {navItems.map((item, index) => (
                 <div className={"nav-item"} key={item.name + index}>
-                    <div className={"icon"}>{item.icon}</div>
+                    <div className={"icon"}><i className={item.icon} /></div>
                     <div className={"text"}>{item.name}</div>
                 </div>
             ))}

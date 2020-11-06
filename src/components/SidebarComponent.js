@@ -2,16 +2,12 @@ import React, { useState } from 'react';
 import "../styles/sidebar.scss";
 import SidebarSummoner from "./SidebarSummoner";
 import { SidebarHeader, SidebarBody, SidebarFooter } from "./SidebarContents";
-import { PencilAlt } from "heroicons/react/outline";
-import Home from "heroicons/outline/home.svg";
-import LightBulb from "heroicons/outline/light-bulb.svg";
-import InformationCircle from "heroicons/outline/information-circle.svg";
 
 const navItems = [
-    { name: "Home", icon: Home, color: "red" },
-    { name: "Notes", icon: PencilAlt, color: "yellow" },
-    { name: "Experience", icon: LightBulb, color: "green" },
-    { name: "About", icon: InformationCircle, color: "blue" },
+    { name: "Home", icon: "fas fa-home", color: "red" },
+    { name: "Notes", icon: "fas fa-sticky-note", color: "yellow" },
+    { name: "Experience", icon: "fas fa-lightbulb", color: "green" },
+    { name: "About", icon: "fas fa-info-circle", color: "blue" },
 ];
 
 const SidebarComponent = () => {
