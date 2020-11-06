@@ -1,0 +1,185 @@
+@import "vars";
+
+.sidebar-root {
+    .sidebar-container {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+        background-color: rgba(1, 1, 1, 0);
+        transition: background-color ease-in-out 0.2s;
+
+        &.visible {
+            z-index: 10;
+        }
+
+        &.open {
+            z-index: 10;
+            background-color: rgba(1, 1, 1, 0.6);
+            animation: background-color ease-in-out 0.2s;
+        }
+
+        .sidebar {
+            position: absolute;
+            background-color: $dark-grey-2;
+            left: -400px;
+            width: 400px;
+            transition: left ease-in-out 0.3s;
+            height: 100%;
+            z-index: 11;
+            box-shadow: -10px 5px 10px 5px rgba(0,0,0,0.35);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+            ::-webkit-scrollbar {
+                width: 8px;
+            }
+
+            ::-webkit-scrollbar-track {
+                background: $dark-grey-1;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                background: $grey-1;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+            }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background: $grey-2;
+            }
+
+            &.open {
+                left: 0;
+                box-shadow: 10px 5px 10px 5px rgba(0,0,0,0.35);
+                transition: left ease-in-out 0.3s;
+            }
+
+            .header {
+                user-select: none;
+                min-height: 200px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+
+                .title {
+                    display: inline-block;
+                    margin: 0 auto;
+                    color: white;
+                    font-family: $great-vibes;
+                    font-size: 4rem;
+                }
+
+                .sub-title {
+                    position: relative;
+                    top: -20px;
+                    right: -55px;
+                    display: inline-block;
+                    color: white;
+                    font-family: $roboto-mono;
+                    font-size: 1rem;
+                }
+            }
+
+            .body {
+                overflow: auto;
+                min-height: 200px;
+                height: 100%;
+
+                .nav-item {
+                    height: 35px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    user-select: none;
+
+                    &:hover {
+                        .filter-yellow {
+                            transition: filter ease-in-out 0.1s;
+                            filter: invert(75%) sepia(63%) saturate(842%) hue-rotate(3deg) brightness(97%) contrast(96%);
+                        }
+
+                        .filter-red {
+                            transition: filter ease-in-out 0.1s;
+                            filter: invert(25%) sepia(84%) saturate(4074%) hue-rotate(359deg) brightness(90%) contrast(150%);
+                        }
+
+                        .filter-green {
+                            transition: filter ease-in-out 0.1s;
+                            filter: invert(65%) sepia(77%) saturate(4687%) hue-rotate(85deg) brightness(124%) contrast(118%);
+                        }
+
+                        .filter-blue {
+                            transition: filter ease-in-out 0.1s;
+                            filter: invert(9%) sepia(99%) saturate(6766%) hue-rotate(247deg) brightness(91%) contrast(145%);
+                        }
+                    }
+
+                    div.icon img {
+                        //filter: invert(100%);
+                        color: red;
+                        height: 35px;
+                    }
+
+                    .text {
+                        color: white;
+                        margin: auto 0;
+                        font-family: $oswald;
+                    }
+                }
+            }
+
+            .footer {
+                min-height: 100px;
+            }
+        }
+    }
+
+    .button {
+        position: absolute;
+        height: 50px;
+        width: 50px;
+        z-index: 12;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        border-radius: 5px;
+        box-shadow: 0px 0px 15px 5px rgba(0,0,0,0.3);
+        user-select: none;
+
+        &.outer {
+            background-color: $dark-grey-2;
+            margin: 10px 0 0 10px;
+            left: 0;
+            top: 0;
+            transition: all ease-in-out 0.3s;
+        }
+
+        &.open {
+            background-color: $dark-grey-1;
+            margin: 10px 10px 0 0;
+            left: 340px;
+            transition: all ease-in-out 0.3s;
+
+            .bar {
+                background-color: $red-1;
+                transition: all ease-in-out 0.3s;
+            }
+        }
+
+        .bar {
+            margin: 1px 8px;
+            border-radius: 5px;
+            height: 4px;
+            background-color: $grey-1;
+            transition: all ease-in-out 0.3s;
+        }
+    }
+}
+

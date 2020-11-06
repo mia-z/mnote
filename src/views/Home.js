@@ -3,9 +3,14 @@ import "../styles/home.scss";
 
 const Home = () => {
     return (
-        <>
-            Home
-        </>
+        <div className={"home"}>
+            HomeHomeHomeHomeHomeHomeHomeHome<br />
+            HomeHomeHomeHomeHomeHomeHomeHome<br />
+            HomeHomeHomeHomeHomeHomeHomeHome<br />
+            HomeHomeHomeHomeHomeHomeHomeHome<br />
+            HomeHomeHomeHomeHomeHomeHomeHome<br />
+            HomeHomeHomeHomeHomeHomeHomeHome<br />
+        </div>
     );
 }
 
