@@ -4,10 +4,13 @@ import SidebarSummoner from "./SidebarSummoner";
 import { SidebarHeader, SidebarBody, SidebarFooter } from "./SidebarContents";
 
 const navItems = [
-    { name: "Home", icon: "fas fa-home", color: "red" },
-    { name: "Notes", icon: "fas fa-sticky-note", color: "yellow" },
-    { name: "Experience", icon: "fas fa-lightbulb", color: "green" },
-    { name: "About", icon: "fas fa-info-circle", color: "blue" },
+    { name: "Home", icon: "fas fa-home", localOverride: null, to: "/Home" },
+    { name: "Notes", icon: "fas fa-sticky-note", localOverride: null, to: "/Notes" },
+    { name: "Snippets", icon: "fas fa-code", localOverride: null, to: "/Snippets" },
+    { name: "Projects", icon: "fas fa-pager", localOverride: null, to: "/Projects" },
+    { name: "Experience", icon: "fas fa-lightbulb", localOverride: null, to: "/Experience" },
+    { name: "About", icon: "fas fa-info-circle", localOverride: null, to: "/About" },
+    { name: "Peep", icon: "fas fa-sad-tear", localOverride: null, to: "/Peep" },
 ];
 
 const SidebarComponent = () => {

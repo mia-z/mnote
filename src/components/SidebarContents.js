@@ -1,12 +1,13 @@
 import React from 'react';
+import { NavLink } from "react-router-dom";
 
 const SidebarHeader = () => {
     return (
-        <div className={"header"}>
-            <div className={"title"}>
+        <div className={"sidebar-header"}>
+            <div className={"sidebar-title"}>
                 miaz
             </div>
-            <div className={"sub-title"}>
+            <div className={"sidebar-sub-title"}>
                 .xyz
             </div>
         </div>
@@ -15,12 +16,14 @@ const SidebarHeader = () => {
 
 const SidebarBody = ({navItems}) => {
     return (
-        <div className={"body"}>
+        <div className={"sidebar-body"}>
             {navItems.map((item, index) => (
-                <div className={"nav-item"} key={item.name + index}>
-                    <div className={"icon"}><i className={item.icon} /></div>
-                    <div className={"text"}>{item.name}</div>
-                </div>
+                <NavLink to={item.to}>
+                    <div className={"sidebar-nav-item"} key={item.name + index}>
+                        <div className={"nav-item-icon"}><i className={item.icon} /></div>
+                        <div className={"nav-item-text"}>{item.name}</div>
+                    </div>
+                </NavLink>
             ))}
         </div>
     );
@@ -28,7 +31,7 @@ const SidebarBody = ({navItems}) => {
 
 const SidebarFooter = () => {
     return (
-        <div className={"footer"}>
+        <div className={"sidebar-footer"}>
 
         </div>
     );
